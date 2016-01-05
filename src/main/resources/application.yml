@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mstine/config-repo.git
+        encrypt:
+          enabled: true
+    bus:
+      trace:
+        enabled: true
+
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: changeme
